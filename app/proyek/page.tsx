@@ -3,10 +3,26 @@ import Image from "next/image";
 
 export default function ProyekPage() {
   const links = [
-    { name: "Belajar Proyek-1", url: "https://itdev.biz.id" },
-    { name: "Belajar Proyek-2", url: "https://itdev.biz.id/lv/public/" },
-    { name: "Belajar Proyek-3", url: "https://itdev.biz.id/wp/" },
-    { name: "Belajar Proyek-4", url: "https://gomockup.my.id/ditppip" },
+    {
+      name: "Belajar Proyek-1",
+      url: "https://itdev.biz.id",
+      nameimage: "Belajar-1.png",
+    },
+    {
+      name: "Belajar Proyek-2",
+      url: "https://itdev.biz.id/lv/public/",
+      nameimage: "Belajar-2.png",
+    },
+    {
+      name: "Belajar Proyek-3",
+      url: "https://itdev.biz.id/wp/",
+      nameimage: "Belajar-3.png",
+    },
+    {
+      name: "Belajar Proyek-4",
+      url: "https://gomockup.my.id/ditppip",
+      nameimage: "Belajar-4.png",
+    },
   ];
 
   return (
@@ -35,7 +51,7 @@ export default function ProyekPage() {
                 <Image
                   width={600}
                   height={400}
-                  src="https://placehold.co/600x400"
+                  src={"/image/" + link.nameimage}
                   alt="placeholder-image"
                   className="w-full"
                 />
