@@ -4,6 +4,7 @@
 import Head from "next/head";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { ContactFormData } from "../kontak/formData"; // Impor interface typescript
+import KontakCard from "@/components/KontakCard";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -47,22 +48,6 @@ export default function ContactPage() {
     }
   };
 
-  const links = [
-    {
-      name: "Email",
-      url: "mailto:dbkotaku@gmail.com?subject=Subjek%20Email&body=Isi%20Email",
-    },
-    { name: "GitHub", url: "https://github.com/awidyanto" },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/agung-widyanto-ab3981274",
-    },
-    {
-      name: "Google Scholar",
-      url: "https://scholar.google.com/citations?user=_gX47-IAAAAJ&hl=en&oi=ao",
-    },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen dark:invert">
       <Head>
@@ -80,7 +65,8 @@ export default function ContactPage() {
         </h1>
 
         <p className="text-center text-lg mb-8 text-gray-700">
-          Silakan gunakan formulir di bawah ini atau temukan saya di media sosial.
+          Silakan gunakan formulir di bawah ini atau temukan saya di media
+          sosial.
         </p>
 
         <div className="flex flex-col md:flex-row gap-5 bg-white p-3 rounded-lg shadow-md">
@@ -163,19 +149,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold mb-4 text-blue-600 text-center">
               Informasi Lainnya
             </h2>
-            <div className="flex flex-col gap-4">
-              {links.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 text-white p-3 rounded-lg font-semibold text-center hover:bg-slate-600 hover:scale-105 transition-all"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
+            <KontakCard />
           </div>
         </div>
       </main>
